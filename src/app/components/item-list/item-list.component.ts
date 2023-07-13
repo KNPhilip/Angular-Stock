@@ -21,4 +21,9 @@ export class ItemListComponent implements OnInit {
   deleteItem(item: Item) {
     this.itemService.deleteItem(item).subscribe(() => (this.itemList = this.itemList.filter(t => t.id != item.id)))
   }
+
+  toggleMissing(item: Item) {
+    item.missing = !item.missing;
+    this.itemService.updateItemMissing(item).subscribe();
+  }
 }

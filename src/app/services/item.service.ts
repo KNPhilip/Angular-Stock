@@ -3,6 +3,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Item } from 'src/app/Item';
 
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  }),
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,5 +24,10 @@ export class ItemService {
   deleteItem(item: Item): Observable<Item> {
     const url = `${this.apiUrl}/${item.id}`;
     return this.http.delete<Item>(url);
+  }
+
+  updateItemMissing(item: Item): Observable<Item> {
+    const url = `${this.apiUrl}/${item.id}`;
+    return this.http.put<Item>(url, item, httpOptions);
   }
 }

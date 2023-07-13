@@ -1,7 +1,15 @@
-<div class="item">
+<div 
+    [ngClass]="{missing: item.missing}" 
+    class="item"
+    (dblclick)="onToggle(item)"
+>
     <h3>
         {{item.text}} 
-        <fa-icon (click)="onDelete(item)" [icon]="faTimes" [ngStyle]="{'color': 'red'}"></fa-icon>
+        <fa-icon 
+            (click)="onDelete(item)" 
+            [icon]="faTimes" 
+            [ngStyle]="{'color': 'red'}"
+        ></fa-icon>
     </h3>
     <p>{{item.quantity}}</p>
 </div>
