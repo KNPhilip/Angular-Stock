@@ -1,1 +1,4 @@
-<p *ngFor="let item of itemList">{{ item.text }}</p>
+<app-item-section 
+    *ngFor="let item of itemList"
+    [item]="item"
+></app-item-section>

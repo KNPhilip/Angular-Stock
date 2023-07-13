@@ -1,0 +1,16 @@
+.item {
+  background: #f4f4f4;
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.item.missing {
+  border-left: 5px solid rgb(255, 0, 0);
+}
+
+.item h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}/*# sourceMappingURL=item-section.component.css.map */

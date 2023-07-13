@@ -1,0 +1,32 @@
+{
+    "items": [
+        {
+            "id": "1",
+            "text": "AirPods Pro",
+            "quantity": 2,
+            "category": "audio",
+            "missing": true
+        },
+        {
+            "id": "2",
+            "text": "HDMI",
+            "quantity": 14,
+            "category": "cable",
+           "missing": false
+        },
+        {
+            "id": "3",
+            "text": "Macbook Pro",
+            "quantity": 1,
+            "category": "pc",
+            "missing": false
+        },
+        {
+            "id": "4",
+            "text": "Cheeseburger",
+            "quantity": 3,
+            "category": "other",
+            "missing": false
+        }
+    ]
+}
