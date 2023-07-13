@@ -1,4 +1,5 @@
 <app-item-section 
+    (onDeleteItem)="deleteItem(item)"
     *ngFor="let item of itemList"
     [item]="item"
 ></app-item-section>

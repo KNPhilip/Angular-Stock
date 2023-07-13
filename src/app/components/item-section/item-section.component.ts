@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Item } from 'src/app/Item';
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
@@ -9,5 +9,10 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons'
 })
 export class ItemSectionComponent {
   @Input() item!: Item;
+  @Output() onDeleteItem: EventEmitter<Item> = new EventEmitter(); 
   faTimes = faTimes;
+
+  onDelete(item: Item) {
+    this.onDeleteItem.emit(item);
+  }
 }

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Item } from 'src/app/Item';
-import { Items } from 'src/app/mock-items';
 
 @Injectable({
   providedIn: 'root'
@@ -14,5 +13,10 @@ export class ItemService {
 
   getItems(): Observable<Item[]> {
     return this.http.get<Item[]>(this.apiUrl);
+  }
+
+  deleteItem(item: Item): Observable<Item> {
+    const url = `${this.apiUrl}/${item.id}`;
+    return this.http.delete<Item>(url);
   }
 }

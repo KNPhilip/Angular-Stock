@@ -17,4 +17,8 @@ export class ItemListComponent implements OnInit {
   ngOnInit(): void {
     this.itemService.getItems().subscribe((items) => this.itemList = items);
   }
+
+  deleteItem(item: Item) {
+    this.itemService.deleteItem(item).subscribe(() => (this.itemList = this.itemList.filter(t => t.id != item.id)))
+  }
 }
