@@ -1,15 +1,21 @@
-<div 
-    [ngClass]="{missing: item.missing}" 
-    class="item"
-    (dblclick)="onToggle(item)"
->
+<div [ngClass]="{ missing: item.missing }" class="item" (dblclick)="onToggle(item)">
     <h3>
-        {{item.text}} 
-        <fa-icon 
-            (click)="onDelete(item)" 
-            [icon]="faTimes" 
-            [ngStyle]="{'color': 'red'}"
-        ></fa-icon>
+        {{ item.text }}
+        <div>
+            <fa-icon
+                class="icon"
+                (click)="onEdit(item)"
+                [ngStyle]="{ 'color': 'orange' }"
+                [icon]="faEdit"
+            ></fa-icon>
+            <fa-icon 
+                class="icon"
+                (click)="onDelete(item)" 
+                [ngStyle]="{ 'color': 'red' }" 
+                [icon]="faTimes"
+            ></fa-icon>
+        </div>
     </h3>
-    <p>{{item.quantity}}</p>
+    <p>Quantity: {{ item.quantity }}</p>
+    <p>Category: {{ item.category }}</p>
 </div>

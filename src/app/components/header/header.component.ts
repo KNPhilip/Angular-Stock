@@ -10,15 +10,24 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   title: string = 'Angular-Stock';
-  showAddItem!: boolean;
-  subscription!: Subscription;
+  showEditForm!: boolean;
+  showAddForm!: boolean;
+  editSubscription: Subscription;
+  addSubscription: Subscription;
 
   constructor(private uiService: UiService, private router: Router) {
-    this.subscription = this.uiService.onToggle().subscribe(value => this.showAddItem = value);
+    this.addSubscription = this.uiService.onToggleAddItem().subscribe(value => this.showAddForm = value);
+    this.editSubscription = this.uiService.onToggleEditItem().subscribe((value => (this.showEditForm = value)));
   }
 
-  toggleAddItem() {
-    this.uiService.toggleAddItem();
+  toggleItems() {
+    if (this.showEditForm || this.showAddForm) {
+      this.uiService.hideEditForms();
+      this.uiService.hideAddForms();
+    }
+    else if (!this.showAddForm) {
+      this.uiService.showAddItem();
+    }
   }
 
   hasRoute(route: string) {

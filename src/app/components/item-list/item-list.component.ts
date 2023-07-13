@@ -10,9 +10,7 @@ import { ItemService } from 'src/app/services/item.service';
 export class ItemListComponent implements OnInit {
   itemList: Item[] = [];
 
-  constructor(private itemService: ItemService) {
-
-  }
+  constructor(private itemService: ItemService) {}
 
   ngOnInit(): void {
     this.itemService.getItems().subscribe((items) => this.itemList = items);
@@ -29,5 +27,11 @@ export class ItemListComponent implements OnInit {
 
   addItem(item: Item) {
     this.itemService.addItem(item).subscribe((item) => (this.itemList.push(item)));
+  }
+
+  editItem(item: Item) {
+    this.itemService
+      .editItem(item)
+      .subscribe((item) => (this.itemList.splice(this.itemList.findIndex(i => i.id === item.id), 1, item)));
   }
 }

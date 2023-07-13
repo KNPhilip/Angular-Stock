@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"item-list.component.css"}
+{"version":3,"sources":["item-list.component.scss","item-list.component.css"],"names":[],"mappings":"AAAA;EACI,cAAA;EACA,YAAA;EACA,iCAAA;EACA,kBAAA;ACCJ","file":"item-list.component.css"}

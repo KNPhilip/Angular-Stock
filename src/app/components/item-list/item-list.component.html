@@ -1,7 +1,15 @@
-<app-add-item (onAddItem)="addItem($event)"></app-add-item>
-<app-item-section 
-    (onDeleteItem)="deleteItem(item)"
-    (onToggleMissing)="toggleMissing(item)"
-    *ngFor="let item of itemList"
-    [item]="item"
-></app-item-section>
+<app-add-item 
+    (onAddItem)="addItem($event)"
+></app-add-item>
+<app-edit-item
+    (onEditItem)="editItem($event)"
+></app-edit-item>
+<div class="item-container">
+    <app-item-section
+        *ngFor="let item of itemList" 
+        [item]="item" 
+        (onDeleteItem)="deleteItem(item)"
+        (onEditItem)="editItem(item)"
+        (onToggleMissing)="toggleMissing(item)"
+    ></app-item-section>
+</div>

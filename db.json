@@ -1,32 +1,88 @@
 {
   "items": [
     {
-      "id": "1",
+      "id": 1,
       "text": "AirPods Pro",
       "quantity": 2,
       "category": "audio",
       "missing": true
     },
     {
-      "id": "3",
+      "id": 2,
       "text": "Macbook Pro",
       "quantity": 1,
       "category": "pc",
       "missing": false
     },
     {
-      "id": "4",
+      "id": 3,
       "text": "HDMI",
       "quantity": 3,
       "category": "cable",
       "missing": false
     },
     {
-      "id": "5",
-      "text": "Cheeseburger",
+      "id": 4,
+      "text": "Hamburger",
       "quantity": 3,
       "category": "other",
       "missing": false
+    },
+    {
+      "id": 5,
+      "text": "Apple TV",
+      "quantity": 2,
+      "category": "tv",
+      "missing": true
+    },
+    {
+      "id": 6,
+      "text": "USB-C",
+      "quantity": 4,
+      "category": "cable",
+      "missing": false
+    },
+    {
+      "id": 7,
+      "text": "Outlook license",
+      "quantity": 6,
+      "category": "other",
+      "missing": false
+    },
+    {
+      "id": 8,
+      "text": "Tusser",
+      "quantity": 16,
+      "category": "other",
+      "missing": false
+    },
+    {
+      "id": 9,
+      "text": "Headset",
+      "quantity": "4",
+      "category": "audio",
+      "missing": true
+    },
+    {
+      "id": 11,
+      "text": "SPACE MOUSEEE!!!!!",
+      "quantity": 1,
+      "category": "AWESOME",
+      "missing": false
+    },
+    {
+      "id": 12,
+      "text": "Meta Quest 2",
+      "quantity": 1,
+      "category": "other",
+      "missing": true
+    },
+    {
+      "id": 13,
+      "text": "Playstation 5",
+      "quantity": 1,
+      "category": "other",
+      "missing": true
     }
   ]
 }

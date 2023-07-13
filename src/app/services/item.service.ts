@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Item } from 'src/app/Item';
+import { Item } from '../Item';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-  }),
-};
+    'Content-Type': 'application/json'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class ItemService {
-  private apiUrl = 'http://localhost:5000/items'
+  private apiUrl = 'http://localhost:5000/items';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http:HttpClient) { }
 
   getItems(): Observable<Item[]> {
     return this.http.get<Item[]>(this.apiUrl);
@@ -27,6 +27,11 @@ export class ItemService {
   }
 
   updateItemMissing(item: Item): Observable<Item> {
+    const url = `${this.apiUrl}/${item.id}`;
+    return this.http.put<Item>(url, item, httpOptions);
+  }
+
+  editItem(item: Item): Observable<Item> {
     const url = `${this.apiUrl}/${item.id}`;
     return this.http.put<Item>(url, item, httpOptions);
   }

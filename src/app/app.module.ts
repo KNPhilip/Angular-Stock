@@ -13,6 +13,7 @@ import { ItemSectionComponent } from './components/item-section/item-section.com
 import { AddItemComponent } from './components/add-item/add-item.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { EditItemComponent } from './components/edit-item/edit-item.component';
 
 const appRoutes: Routes = [
     { path: '', component: ItemListComponent },
@@ -28,7 +29,8 @@ const appRoutes: Routes = [
     ItemSectionComponent,
     AddItemComponent,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
+    EditItemComponent
   ],
   imports: [
     BrowserModule,
