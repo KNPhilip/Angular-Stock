@@ -26,4 +26,8 @@ export class ItemListComponent implements OnInit {
     item.missing = !item.missing;
     this.itemService.updateItemMissing(item).subscribe();
   }
+
+  addItem(item: Item) {
+    this.itemService.addItem(item).subscribe((item) => (this.itemList.push(item)));
+  }
 }

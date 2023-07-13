@@ -30,4 +30,8 @@ export class ItemService {
     const url = `${this.apiUrl}/${item.id}`;
     return this.http.put<Item>(url, item, httpOptions);
   }
+
+  addItem(item: Item): Observable<Item> {
+    return this.http.post<Item>(this.apiUrl, item, httpOptions);
+  }
 }

@@ -1,0 +1,26 @@
+<form *ngIf="showAddItem" class="add-form" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+        <label for="text">Stock</label>
+        <input type="text" name="text" [(ngModel)]="text" id="text" placeholder="Name of stock" />
+    </div>
+    <div class="form-control">
+        <label for="quantity">Quantity</label>
+        <input type="number" name="quantity" [(ngModel)]="quantity" id="quantity" placeholder="Quantity" />
+    </div>
+    <div class="form-control">
+        <label for="category">Category</label>
+        <select name="category" [(ngModel)]="category" id="category">
+            <option value="audio">Audio</option>
+            <option value="input">Input</option>
+            <option value="cable">Cable</option>
+            <option value="pc">PC</option>
+            <option value="tv">TV</option>
+            <option value="other" selected>Other..</option>
+        </select>
+    </div>
+    <div class="form-control form-control-check">
+        <label for="missing">Missing?</label>
+        <input type="checkbox" name="missing" [(ngModel)]="missing" id="missing" />
+    </div>
+    <input type="submit" value="Add to Stock Overview" class="btn btn-block">
+</form>
